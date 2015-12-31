@@ -7,6 +7,7 @@ N-MLEM is a code for simple neutron spectrum unfolding of the Nested Neutron Spe
 
 All data input into the code must be charge in units of nC or in count rates in units of counts per second. The code automatically converts the charge to count rate and vice versa using a manufacturer provided conversion coefficient 7 fA/cps.
 
+![alt tag](https://raw.github.com/blakholesun/N-MLEM/master/figures/image03.png)
 
 ## Parameters
 
@@ -33,7 +34,12 @@ There are two guess/starting spectra available to the user: a uniform spectrum a
 
 Once all the parameters have been input, selected and verified, press CALCULATE!
 
+![alt tag](https://raw.github.com/blakholesun/N-MLEM/master/figures/image01.png)
+
 After pressing CALCULATE!, a neutron spectrum appears and begins to converge towards a certain shape. Upon completion, an uncertainty calculation is performed and the code then asks the user to save a report of the unfolding.
+
+![alt tag](https://raw.github.com/blakholesun/N-MLEM/master/figures/image00.png)
+![alt tag](https://raw.github.com/blakholesun/N-MLEM/master/figures/image02.png)
 
 You can save the report as a text file anywhere you have write permission. The figure can also be saved in any image format by clicking on the save button.
 
