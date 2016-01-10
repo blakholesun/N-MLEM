@@ -56,7 +56,7 @@ function NMLEM_OpeningFcn(hObject, eventdata, handles, varargin)
 load('unfoldparams.mat');
 handles.icruconv = icruconv;
 handles.Bins = Bins;
-handles.uniform = ones(1,52)./52;
+handles.uniform = ones(52,1)./52;
 handles.step = testin1;
 handles.response = respmat;
 
