@@ -22,7 +22,7 @@ function varargout = NMLEM(varargin)
 
 % Edit the above text to modify the response to help NMLEM
 
-% Last Modified by GUIDE v2.5 20-Aug-2015 14:02:18
+% Last Modified by GUIDE v2.5 01-Apr-2016 13:55:14
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -59,6 +59,14 @@ handles.Bins = Bins;
 handles.uniform = ones(52,1)./52;
 handles.step = testin1;
 handles.response = respmat;
+
+%populate
+handles.surfaceArea = 0;
+handles.edit21.String = num2str(handles.surfaceArea);
+handles.distanceToSource = 0;
+handles.edit22.String = num2str(handles.distanceToSource);
+handles.doseRate = 0;
+handles.edit23.String = num2str(handles.doseRate);
 
 %populate the time box
 handles.time = 0.1;
@@ -897,6 +905,93 @@ guidata(hObject, handles);
 % --- Executes during object creation, after setting all properties.
 function edit20_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to edit20 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function edit21_Callback(hObject, eventdata, handles)
+% hObject    handle to edit21 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of edit21 as text
+%        str2double(get(hObject,'String')) returns contents of edit21 as a double
+text = str2double(get(hObject,'String'));
+if isnan(text)
+    msgbox('You entered text or did not include a value. Please enter a number.')
+end
+
+handles.surfaceArea = text;
+guidata(hObject, handles);
+
+% --- Executes during object creation, after setting all properties.
+function edit21_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to edit21 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function edit22_Callback(hObject, eventdata, handles)
+% hObject    handle to edit22 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of edit22 as text
+%        str2double(get(hObject,'String')) returns contents of edit22 as a double
+text = str2double(get(hObject,'String'));
+if isnan(text)
+    msgbox('You entered text or did not include a value. Please enter a number.')
+end
+
+handles.distanceToSource = text;
+guidata(hObject, handles);
+
+% --- Executes during object creation, after setting all properties.
+function edit22_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to edit22 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function edit23_Callback(hObject, eventdata, handles)
+% hObject    handle to edit23 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of edit23 as text
+%        str2double(get(hObject,'String')) returns contents of edit23 as a double
+text = str2double(get(hObject,'String'));
+if isnan(text)
+    msgbox('You entered text or did not include a value. Please enter a number.')
+end
+
+handles.doseRate = text;
+guidata(hObject, handles);
+
+% --- Executes during object creation, after setting all properties.
+function edit23_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to edit23 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
